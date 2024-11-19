@@ -50,6 +50,7 @@ CREATE TABLE Enrollments
 
 -- !----------------------------------------------------
 
+
 -- Insert fake data into the Students table
 INSERT INTO Students
     (FirstName, LastName, Email, EnrollmentDate)
@@ -98,3 +99,60 @@ VALUES
     (2, 4, 3.8),
     (3, 5, 2.9),
     (4, 6, 3.4);
+
+
+-- !----------------------------------------------------
+
+-- Simple SELECT query
+SELECT *
+FROM Students;
+
+SELECT *
+FROM Courses;
+
+SELECT *
+FROM Instructors;
+
+SELECT *
+FROM Departments;
+
+SELECT *
+FROM Enrollments;
+
+-- DISTINCT return unique data and don't show repeated data
+SELECT DISTINCT FirstName
+FROM Students;
+
+-- set condition for SELECTION query
+SELECT *
+FROM Students
+WHERE Age > 20;
+
+SELECT *
+FROM Students
+WHERE FirstName = 'John';
+
+-- Use LIKE to search for a specified pattern
+--      Use % for set search pattern
+--      Use _ for ser number of character
+SELECT *
+FROM Students
+WHERE LastName LIKE 'Jo%';
+
+SELECT *
+FROM Students
+WHERE LastName LIKE '%h';
+
+SELECT *
+FROM Students
+WHERE LastName LIKE '%o%';
+
+SELECT *
+FROM Students
+WHERE LastName LIKE '_o_';
+
+
+-- Use IN for select data with specific value
+SELECT *
+FROM Students
+WHERE Age IN (21,22,23);
